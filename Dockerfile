@@ -12,4 +12,4 @@ RUN git clone https://github.com/lanzhiwang/stable-diffusion-webui.git /app/stab
 
 WORKDIR /app/stable-diffusion-webui
 
-RUN  bash ./webui.sh --skip-torch-cuda-test || exit 0
+RUN bash ./webui.sh --skip-torch-cuda-test || exit 0
