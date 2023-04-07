@@ -14,3 +14,5 @@ docker run -it --name sdw --network host \
   --rm siutin/stable-diffusion-webui-docker \
   bash webui.sh --skip-torch-cuda-test --precision full --no-half --use-cpu SD GFPGAN BSRGAN ESRGAN SCUNet --all --share
 ```
+* siutin/stable-diffusion-webui-docker:2023-02-05
+
