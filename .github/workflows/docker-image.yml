@@ -45,4 +45,5 @@ jobs:
         tags: |
           lanzhiwang/stable-diffusion-webui-docker:latest
           lanzhiwang/stable-diffusion-webui-docker:${{ steps.vars.outputs.build_version }}
-        platforms: linux/amd64,linux/arm64
+        # platforms: linux/amd64,linux/arm64
+        platforms: linux/amd64
