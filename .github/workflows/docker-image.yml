@@ -37,7 +37,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: .
-        file: Dockerfile
+        file: Dockerfile-notebook
         build-args: |
           BUILD_DATE=${{ steps.vars.outputs.build_date }}
           BUILD_VERSION=${{ steps.vars.outputs.build_version }}
