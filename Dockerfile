@@ -8,7 +8,8 @@ LABEL org.label-schema.version=$BUILD_VERSION
 
 WORKDIR /app/
 
-RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git /app/stable-diffusion-webui
+RUN git clone https://github.com/lanzhiwang/stable-diffusion-webui.git /app/stable-diffusion-webui
 
 WORKDIR /app/stable-diffusion-webui
+
 RUN  bash ./webui.sh --skip-torch-cuda-test || exit 0
