@@ -1,4 +1,4 @@
-FROM --platform=$TARGETPLATFORM nvidia/cuda:11.4.1-devel-ubuntu20.04
+FROM --platform=$TARGETPLATFORM jupyter/minimal-notebook:python-3.10.10
 
 ARG BUILD_DATE
 ARG BUILD_VERSION
