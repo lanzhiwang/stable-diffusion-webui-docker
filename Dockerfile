@@ -30,8 +30,11 @@ ENV PATH /opt/conda/bin:$PATH
 
 # Leave these args here to better use the Docker build cache
 ARG CONDA_VERSION=py310_22.11.1-1
+ARG NB_USER="jovyan"
+ARG NB_UID="1000"
 
 RUN set -x && \
+    useradd -l -m -s /bin/bash -N -u "${NB_UID}" "${NB_USER}" && \
     UNAME_M="$(uname -m)" && \
     if [ "${UNAME_M}" = "x86_64" ]; then \
         MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-${CONDA_VERSION}-Linux-x86_64.sh"; \
@@ -59,6 +62,8 @@ RUN set -x && \
     find /opt/conda/ -follow -type f -name '*.js.map' -delete && \
     conda install python="3.10" -y && \
     /opt/conda/bin/conda clean -afy
+
+USER ${NB_UID}
 
 WORKDIR /app/
 
